@@ -1,12 +1,24 @@
 #include "snn.h"
 
+uint64_t a[2] = {0xfff, 0x345};
 
-int main(char* argv){
+int main(){
     // neuron state before nadd instruction
-    int seed = atoi(argv);
+    for (int i = 0; i < 2; i ++){
+        printf("%ld ", a[i]);
+    }
+    printf("\n");
+    uint64_t b = nld(&a[0], 0);
+    for (int i = 0; i < 2; i ++){
+        printf("%ld ", a[i]);
+    }
+    printf("\n 0x%x \n", b);
+    nst(&a[1], b, 0);
+    for (int i = 0; i < 2; i ++){
+        printf("%ld ", a[i]);
+    }
+    printf("\n");
     // neuron update input voltage
-    printf("%d\n", seed);
-    printf("%s\n", argv);
     return 0;
 }
 

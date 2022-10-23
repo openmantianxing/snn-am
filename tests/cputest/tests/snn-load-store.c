@@ -13,14 +13,20 @@ uint64_t nst_in[] = {
 };
 
 int main(){
+    for (int i = 0 ; i < LENGTH(mem); i++){
+        printf("%ld ", mem[i]);
+    }
+    printf("\n");
     for (int i = 0; i < LENGTH(mem); i++) {
         nemu_assert(nld(&mem[i],0) == nld_ans[i]);
+        printf("%ld ", mem[i]);
     }
-
+    printf("\n");
     for(int i = 0; i < LENGTH(nst_in); i++) {
         nst(&mem[i], nst_in[i], 0);
         nemu_assert(mem[i] == nst_in[i]);
+        printf("0x%x ", mem[i]);
     }
-
+    printf("\n");
     return 0;
 }

@@ -4,6 +4,9 @@
 *~
 *.a
 *.o
+!string.o
+!stdlib.o
+!stdio.o
 *.d
 __pycache__
 *.pyc
